@@ -12,7 +12,7 @@ class Item(db.Model):
             "sheetr_id": self.sheet_id
         }
 
-    @classmethod
+    @staticmethod
     def create_list_of_items(items):
         items_list = []
         for item in items:

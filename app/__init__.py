@@ -25,8 +25,9 @@ def create_app(test_config=None):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    from .routes.user_routes import user_bp
-    app.register_blueprint(user_bp)
+    from .routes.member_routes import member_bp, root_bp
+    app.register_blueprint(member_bp)
+    app.register_blueprint(root_bp)
 
     from .routes.sheet_routes import sheet_bp
     app.register_blueprint(sheet_bp)
@@ -34,7 +35,8 @@ def create_app(test_config=None):
     from .routes.item_routes import item_bp
     app.register_blueprint(item_bp)
 
-    from app.models.user import User
+
+    from app.models.member import Member
     from app.models.sheet import Sheet
     from app.models.item import Item
 
