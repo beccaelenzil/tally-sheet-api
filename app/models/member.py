@@ -17,5 +17,5 @@ class Member(db.Model):
     def create_list_of_members(members):
         members_list = []
         for member in members:
-            members_list.append(member.to_dict)
+            members_list.append(member.to_dict())
         return members_list
